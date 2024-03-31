@@ -9,7 +9,7 @@ const app = express()
 app.use(express.static('client'))
 
 // Database connectivity
-mongoose.connect('mongodb://localhost:27017/eventDB')
+mongoose.connect('mongodb+srv://swapnildubey3636:Test_01@cluster0.ar6nj03.mongodb.net/event-management-system?retryWrites=true&w=majority')
 
 app.use(express.json())
 

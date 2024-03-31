@@ -36,7 +36,7 @@ Event.countDocuments()
 
 // Weather fetch API
 async function fetchWeather(city, date) {
-  const url = `https://gg-backend-assignment.azurewebsites.net/api/Weather?code=KfQnTWHJbg1giyB_Q9Ih3Xu3L9QOBDTuU5zwqVikZepCAzFut3rqsg==&city=${city}&date=${date}`
+ // const url = `https://gg-backend-assignment.azurewebsites.net/api/Weather?code=KfQnTWHJbg1giyB_Q9Ih3Xu3L9QOBDTuU5zwqVikZepCAzFut3rqsg==&city=${city}&date=${date}`
   const response = await fetch(url)
   const weatherData = await response.json()
   return weatherData
@@ -44,7 +44,7 @@ async function fetchWeather(city, date) {
 
 // Distance calculation API
 async function calculateDistance(userLat, userLng, eventLat, eventLng) {
-  const url = `https://gg-backend-assignment.azurewebsites.net/api/Distance?code=IAKvV2EvJa6Z6dEIUqqd7yGAu7IZ8gaH-a0QO6btjRc1AzFu8Y3IcQ==&latitude1=${userLat}&longitude1=${userLng}&latitude2=${eventLat}&longitude2=${eventLng}`
+ // const url = `https://gg-backend-assignment.azurewebsites.net/api/Distance?code=IAKvV2EvJa6Z6dEIUqqd7yGAu7IZ8gaH-a0QO6btjRc1AzFu8Y3IcQ==&latitude1=${userLat}&longitude1=${userLng}&latitude2=${eventLat}&longitude2=${eventLng}`
   const response = await fetch(url)
   const distanceData = await response.json()
   return distanceData

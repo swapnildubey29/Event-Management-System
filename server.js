@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const csvParser = require('csv-parser')
 const fs = require('fs')
 const express = require('express')
@@ -9,7 +11,7 @@ const app = express()
 app.use(express.static('client'))
 
 // Database connectivity
-mongoose.connect('mongodb+srv://swapnildubey3636:Test_01@cluster0.ar6nj03.mongodb.net/event-management-system?retryWrites=true&w=majority')
+mongoose.connect(process.env.DATABASE_URL)
 
 app.use(express.json())
 

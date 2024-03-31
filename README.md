@@ -55,7 +55,7 @@ This project serves as an Event Management System backend developed as an assign
 
 <div align="center">
   Made with ❤️ by [Swapnil Dubey]
-<<<<<<< HEAD
+
 </div>
-=======
+
 </div>

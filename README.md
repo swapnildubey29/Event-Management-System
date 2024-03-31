@@ -48,7 +48,7 @@ This project serves as an Event Management System backend developed as an assign
 2. Navigate to the project directory.
 3. Install dependencies: `npm install`
 4. Start the server: `node server.js`
-5. Open your web browser and visit `localhost:3000` to view the results.
+5. Open your web browser and visit `localhost:8000` to view the results.
 
 
 ---

@@ -10,12 +10,12 @@ const fetch = require('node-fetch')
 const app = express()
 app.use(express.static('client'))
 
-// Database connectivity
+//Database connectivity
 mongoose.connect(process.env.DATABASE_URL)
 
 app.use(express.json())
 
-// CSV parsing and data import
+//CSV parsing and data import
 Event.countDocuments()
   .then(count => {
     if (count === 0) {
@@ -36,7 +36,7 @@ Event.countDocuments()
     console.error('Error checking database:', err)
   });
 
-// Weather fetch API
+//fetching Weather API
 async function fetchWeather(city, date) {
   const url = `https://gg-backend-assignment.azurewebsites.net/api/Weather?code=KfQnTWHJbg1giyB_Q9Ih3Xu3L9QOBDTuU5zwqVikZepCAzFut3rqsg==&city=${city}&date=${date}`
   const response = await fetch(url)
@@ -44,7 +44,7 @@ async function fetchWeather(city, date) {
   return weatherData
 }
 
-// Distance calculation API
+//Distance calculation API
 async function calculateDistance(userLat, userLng, eventLat, eventLng) {
   const url = `https://gg-backend-assignment.azurewebsites.net/api/Distance?code=IAKvV2EvJa6Z6dEIUqqd7yGAu7IZ8gaH-a0QO6btjRc1AzFu8Y3IcQ==&latitude1=${userLat}&longitude1=${userLng}&latitude2=${eventLat}&longitude2=${eventLng}`
   const response = await fetch(url)
@@ -52,7 +52,7 @@ async function calculateDistance(userLat, userLng, eventLat, eventLng) {
   return distanceData
 }
 
-// Get events API with optimizations
+//Events API
 app.get('/events/find', async (req, res) => {
   const { latitude, longitude, date, page } = req.query
   const pageSize = 10
@@ -72,7 +72,7 @@ app.get('/events/find', async (req, res) => {
       const dateParts = dateString.split("T")
       const datetrue = dateParts[0];
 
-      // Fetch weather and distance data in parallel
+      //Fetching weather and distance data in parallel
       const [weatherData, distanceData] = await Promise.all([
         fetchWeather(event.city_name, datetrue),
         calculateDistance(latitude, longitude, event.latitude, event.longitude)

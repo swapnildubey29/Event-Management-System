@@ -47,7 +47,7 @@ This project serves as an Event Management System backend developed as an assign
 1. Clone the repository: `git clone https://github.com/swapnildubey29/Event-Management-System`
 2. Navigate to the project directory.
 3. Install dependencies: `npm install`
-4. Start the server: `node server.js`
+4. Start the server: `npm run dev`
 5. Open your web browser and visit `localhost:8000` to view the results.
 
 
